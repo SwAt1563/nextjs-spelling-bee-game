@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
 
-import BootstrapClient from "@/lib/BootstrapClient";
+import BootstrapClient from "@/components/BootstrapClient";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 

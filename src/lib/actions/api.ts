@@ -1,7 +1,7 @@
+"use server";
+
 import englishDictionary from "@/dictionaries/english.json";
 import TurkishDictionary from "@/dictionaries/turkish.json";
-
-import { type NextRequest } from "next/server";
 
 interface Dictionary {
   [key: string]: string[];
@@ -81,13 +81,7 @@ function processDictionary(dict: Dictionary): Result | null {
   };
 }
 
-export async function GET(request: NextRequest) {
-  // Extract search parameters from the request URL
-  const params = request.nextUrl.searchParams;
-
-  // Retrieve the 'lang' parameter from the URL query string
-  const lang = params.get("lang");
-
+export async function getData(lang: string) {
   // Initialize an empty object to hold the dictionary data
   let data = {};
 
@@ -97,10 +91,7 @@ export async function GET(request: NextRequest) {
   } else if (lang === "en") {
     data = englishDictionary;
   } else {
-    // Return a 400 Bad Request response if the 'lang' parameter is invalid
-    return new Response("Invalid language", {
-      status: 400,
-    });
+    return null;
   }
 
   let result: null | Result = null;
@@ -121,10 +112,5 @@ export async function GET(request: NextRequest) {
     maxScore,
   };
 
-  return new Response(JSON.stringify(response), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return response;
 }
