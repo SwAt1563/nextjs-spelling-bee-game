@@ -22,7 +22,7 @@ const ConfirmationModal = ({ show, handleClose, handleConfirm }: any) => {
             handleClose();
           }}
         >
-          Start 
+          Start
         </Button>
       </Modal.Footer>
     </Modal>
@@ -38,7 +38,7 @@ export default function ModelButton() {
 
   return (
     <>
-      <div className="d-flex justify-content-end p-3 ">
+      <div className="d-flex justify-content-center justify-content-md-end p-3">
         <Button
           className="text-light"
           variant="warning"

@@ -16,10 +16,10 @@ export default async function Instructions() {
 
       <div className="container my-5">
         <div className="row justify-content-center">
-          <div className="col-lg-8">
+          <div className="col-lg-8 ">
             <h1 className="mb-4 text-center">Game Instructions</h1>
-            <div className="card">
-              <ul className="list-group list-group-flush">
+            <div className="card shadow-sm">
+              <ul className="list-group list-group-flush list-unstyled">
                 <li className="list-group-item text-warning">
                   <BiSolidInfoCircle className="me-2" /> <strong>Scores</strong>
                   <ul className="text-dark">
