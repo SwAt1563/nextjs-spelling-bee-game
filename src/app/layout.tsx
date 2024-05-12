@@ -4,7 +4,7 @@ import { Montserrat } from "next/font/google";
 
 import BootstrapClient from "@/lib/BootstrapClient";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"] });
 

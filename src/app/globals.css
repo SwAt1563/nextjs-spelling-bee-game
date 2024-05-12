@@ -1,0 +1,79 @@
+/* most of the custom css styles not used, just foucs on bootstrap styles in this application */
+:root {
+  --color-text: #333333;
+  --color-text-secondary: #5f6778;
+
+  --color-hightlight: #2f4858;
+
+  --color-bg: #ffffff;
+  --color-gray-bg: #dbd4d7;
+  --color-gray-bg2: #b5adb5;
+  --color-bg-secondary: #c6c5c5;
+  --color-bg-body: var(--color-bg);
+
+  --font-weight-bold: 900;
+  --font-weight-medium: 700;
+  --font-weight-normal: 400;
+  --font-weight-small: 300;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+ul {
+  list-style:inside;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-normal);
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+

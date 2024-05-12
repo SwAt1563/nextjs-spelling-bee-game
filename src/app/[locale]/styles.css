@@ -1,0 +1,12 @@
+.svg-icon {
+    transition: fill 0.3s ease, transform 0.3s ease; 
+    fill: rgba(var(--bs-warning-rgb), var(--bs-text-opacity));
+    display: inline-block; /* Ensures the transform applies correctly */
+  }
+  
+  .svg-icon:hover {
+    /* fill: #333;  */
+    transform: scale(1.1); 
+  
+  }
+  

@@ -1,19 +1,14 @@
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-import LocalSwitcher from '@/components/local-switcher';
-const WelcomeMessage = () => {
-
-  return (
-    <div className="container">
-      <LocalSwitcher/>
-    </div>
-  );
-};
+import "./styles.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <WelcomeMessage />
-      {children}
+        <Header />
+        {children}
+        <Footer />
     </>
   );
 }
