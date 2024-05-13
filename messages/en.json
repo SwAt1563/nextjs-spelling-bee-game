@@ -1,5 +1,83 @@
 {
-    "Language": {
-        "title": "English"
+  "Language": {
+    "title": "English"
+  },
+  "Header": {
+    "title": "Spelling Bee Game"
+  },
+  "Footer": {
+    "title": "© 2024 Copyright"
+  },
+  "Home": {
+    "keywords": "Spell, Score, Shine",
+    "title": "Master Your Spelling Skills",
+    "body": "Dive into the world of words with our interactive spelling challenges. Start your journey to becoming a spelling champion today!"
+  },
+  "Instructions": {
+    "title": "Game Instructions",
+    "startGameButton": "Start Game",
+    "model": {
+      "title": "Start Game Confirmation",
+      "body": "Are you sure you want to start the game?",
+      "cancelButton": "Cancel",
+      "startButton": "Start"
+    },
+    "list": [
+      {
+        "title": "Scores",
+        "points": [
+          "Earn 1 point for each word consisting of 3 or 4 letters.",
+          "Words containing 5 or more letters yield points equal to the number of letters in the word."
+        ]
+      },
+      {
+        "title": "Restrictions",
+        "points": [
+          "Every word you form must include the designated central letter."
+        ]
+      },
+      {
+        "title": "Benefits",
+        "points": [
+          "Feel free to use any letter multiple times within a single word to craft your answers."
+        ]
+      },
+      {
+        "title": "Time",
+        "points": [
+          "Each game starts with a countdown of one minute.",
+          "Successfully spelling a correct word awards an additional 15 seconds.",
+          "The game ends when the timer expires or if a player achieves the maximum score possible."
+        ]
+      },
+      {
+        "title": "Warning",
+        "points": [
+          "Once the game starts, the language setting cannot be changed."
+        ]
+      }
+    ]
+  },
+  "Game": {
+    "score": "Your Score",
+    "maxScore": "Max Score",
+    "timer": "Timer",
+    "placeholder": "Type or click",
+    "deleteButton": "Delete",
+    "enterButton": "Enter",
+    "notifications": {
+      "correct": "Correct! +15 seconds",
+      "wrong": "Not a valid word",
+      "short": "Too short"
     }
+  },
+  "Results": {
+    "title": "Last Game Results",
+    "score": "Score",
+    "words": "Words",
+    "success": "Success",
+    "true": "Yes",
+    "false": "No",
+    "time": "Time Taken: {{minutes}} minute{{minutesS}} and {{seconds}} second{{secondsS}}"
+  }
 }

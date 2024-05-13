@@ -1,5 +1,81 @@
 {
-    "Language": {
-        "title": "Türkçe"
+  "Language": {
+    "title": "Türkçe"
+  },
+  "Header": {
+    "title": "Heceleme Oyunu"
+  },
+  "Footer": {
+    "title": "© 2024 Telif Hakkı"
+  },
+  "Home": {
+    "keywords": "Hecele, Skor, Parla",
+    "title": "Heceleme Becerilerinizi Geliştirin",
+    "body": "Etkileşimli heceleme meydan okumalarımız ile kelimeler dünyasına dalın. Bugün bir heceleme şampiyonu olma yolculuğuna başlayın!"
+  },
+  "Instructions": {
+    "title": "Oyun Talimatları",
+    "startGameButton": "Oyunu Başlat",
+    "model": {
+      "title": "Oyunu Başlatma Onayı",
+      "body": "Oyunu başlatmak istediğinizden emin misiniz?",
+      "cancelButton": "İptal",
+      "startButton": "Başlat"
+    },
+    "list": [
+      {
+        "title": "Puanlar",
+        "points": [
+          "Her 3 veya 4 harfli kelimeden 1 puan kazanın.",
+          "5 veya daha fazla harf içeren kelimeler kelime başına harf sayısı kadar puan kazandırır."
+        ]
+      },
+      {
+        "title": "Kısıtlamalar",
+        "points": [
+          "Oluşturduğunuz her kelime belirlenen merkezi harfi içermelidir."
+        ]
+      },
+      {
+        "title": "Avantajlar",
+        "points": [
+          "Tek bir kelimede cevaplarınızı oluşturmak için istediğiniz harfi birden fazla kez kullanabilirsiniz."
+        ]
+      },
+      {
+        "title": "Zaman",
+        "points": [
+          "Her oyun bir dakikalık geri sayım ile başlar.",
+          "Doğru bir kelime hecelemek ek 15 saniye kazandırır.",
+          "Oyun, zamanlayıcı bitince veya bir oyuncu mümkün olan maksimum puanı elde ettiğinde sona erer."
+        ]
+      },
+      {
+        "title": "Uyarı",
+        "points": ["Oyun başladıktan sonra dil ayarı değiştirilemez."]
+      }
+    ]
+  },
+  "Game": {
+    "score": "Puanınız",
+    "maxScore": "Maksimum Puan",
+    "timer": "Zamanlayıcı",
+    "placeholder": "Yaz veya tıkla",
+    "deleteButton": "Sil",
+    "enterButton": "Gir",
+    "notifications": {
+      "correct": "Doğru! +15 saniye",
+      "wrong": "Geçerli bir kelime değil",
+      "short": "Çok kısa"
     }
+  },
+  "Results": {
+    "title": "Son Oyun Sonuçları",
+    "score": "Puan",
+    "words": "Kelimeler",
+    "success": "Başarı",
+    "true": "Evet",
+    "false": "Hayır",
+    "time": "Harcanan Zaman: {{minutes}} dakika{{minutesS}} ve {{seconds}} saniye{{secondsS}}"
+  }
 }

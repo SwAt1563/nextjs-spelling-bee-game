@@ -4,9 +4,21 @@ import { cookies } from "next/headers";
 import { getData } from "@/lib/actions/api";
 import Spelling from "./(components)/Spelling";
 
-const fetchData = async (lang: string) => {
+type GameData = {
+  lang: string;
+  keywords: Record<string, string>;
+  key: string;
+  chosenCharacters: string[];
+  characters: string[];
+  words: string[];
+  maxScore: number;
+};
+
+const fetchData = async (lang: string, keywords: Record<string, string>) => {
   try {
-    const data = await getData(lang);
+    const response = await getData(lang);
+    const data = { lang, keywords, ...response} as GameData;
+
     return data;
   } catch (error) {
     throw new Error("The Server is not responding");
@@ -17,8 +29,16 @@ export default async function Game() {
   const cookieStore = cookies();
   const lang = cookieStore.get("NEXT_LOCALE")?.value || "en";
 
-  //   const data = await fetchData(lang);
-  //   console.log(data);
+  const keywords = {
+    score: "Your Score",
+    maxScore: "Max Score",
+    timer: "Timer",
+    placeholder: "Type or click",
+    deleteButton: "Delete",
+    enterButton: "Enter",
+  };
+
+  const data = await fetchData(lang, keywords);
 
   return (
     <>
@@ -28,7 +48,7 @@ export default async function Game() {
 
       <div className="containe text-center">
         <div className="container-fluid my-3 text-center">
-          <Spelling />
+          <Spelling data={data} />
         </div>
       </div>
     </>

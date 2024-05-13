@@ -14,7 +14,7 @@ const HexButton: React.FC<HexButtonProps> = ({
   addChar,
 }) => {
   const handleClick = () => {
-    addChar(char);
+    addChar(char.toLocaleUpperCase());
   };
 
   const iconClassName = isKey ? "text-warning" : "text-dark";
@@ -22,7 +22,7 @@ const HexButton: React.FC<HexButtonProps> = ({
   return (
     <div className={styles.hexagon} onClick={handleClick}>
       <BsFillHexagonFill className={iconClassName} size={100} />
-      <span className={styles.hexNumber}>{char}</span>
+      <span className={styles.hexNumber}>{char.toLocaleUpperCase()}</span>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 import BootstrapClient from "@/components/BootstrapClient";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,14 +20,18 @@ interface RootLayoutProps {
   params: { locale: string };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
+  const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={montserrat.className}>{children}
-      <BootstrapClient />
+      <body className={montserrat.className}>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+        <BootstrapClient />
       </body>
     </html>
   );
