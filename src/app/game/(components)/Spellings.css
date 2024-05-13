@@ -1,0 +1,53 @@
+.input-field {
+  background: none;
+  border: none;
+
+  line-height: 3;
+  font-size: 30px;
+  height: 50px;
+  font-weight: var(--font-weight-bold);
+}
+
+.input-field:hover,
+.input-field:focus {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.click-btn {
+  background: none;
+  border: 1px solid var(--color-text-secondary);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+ 
+}
+
+.progress-bar {
+  transform: rotate(90deg);
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matching-words-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .matching-word {
+    background-color: #f0f0f0;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  

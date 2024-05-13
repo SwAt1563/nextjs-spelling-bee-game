@@ -1,0 +1,19 @@
+.hexagon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: fill 0.3s ease, transform 0.3s ease;
+  /* display: inline-block; */
+}
+
+.hexNumber {
+  position: absolute;
+  font-size: 24px;
+  color: white;
+}
+
+.hexagon:hover {
+  transform: scale(1.1);
+}
