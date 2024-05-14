@@ -1,7 +1,6 @@
 "use server";
 
-import englishDictionary from "@/dictionaries/english.json";
-import TurkishDictionary from "@/dictionaries/turkish.json";
+import { calculateScore  } from "@/utils/score";
 
 interface Dictionary {
   [key: string]: string[];
@@ -13,16 +12,11 @@ interface Result {
   filteredWords: string[];
 }
 
-function calculateScore(words: string[]): number {
+function getScore(words: string[]): number {
   let totalScore = 0;
 
   for (const word of words) {
-    const wordLength = word.length;
-    if (wordLength <= 4) {
-      totalScore += 1;
-    } else {
-      totalScore += wordLength;
-    }
+    totalScore += calculateScore(word)
   }
 
   return totalScore;
@@ -36,7 +30,9 @@ function processDictionary(dict: Dictionary): Result | null {
   const keys = Object.keys(dict);
   if (keys.length === 0) return null;
 
+  // choose random key character from the dictionary
   const key = randomElement(keys);
+  // get the list of words for the chosen key character
   const words = dict[key];
   let uniqueChars = new Set<string>();
 
@@ -83,14 +79,11 @@ function processDictionary(dict: Dictionary): Result | null {
 
 export async function getData(lang: string) {
   // Initialize an empty object to hold the dictionary data
-  let data = {};
-
-  // Conditionally assign the dictionary based on the 'lang' parameter
-  if (lang === "tr") {
-    data = TurkishDictionary;
-  } else if (lang === "en") {
-    data = englishDictionary;
-  } else {
+  let data = {}
+  try {
+    data = (await import(`@/dictionaries/${lang}.json`)).default;
+  } catch (error) {
+    console.error("Failed to load dictionary data", error);
     return null;
   }
 
@@ -101,7 +94,7 @@ export async function getData(lang: string) {
   }
 
   // Calculate the maximum score for the filtered words from the result
-  const maxScore = calculateScore(result.filteredWords);
+  const maxScore = getScore(result.filteredWords);
 
   // Prepare the response object with data to be returned
   const response = {

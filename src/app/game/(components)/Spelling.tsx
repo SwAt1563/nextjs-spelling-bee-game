@@ -15,7 +15,7 @@ import { calculateScore } from "@/utils/score";
 
 type GameData = {
   lang: string;
-  keywords: Record<string, string>;
+  keywords: Record<string, any>;
   key: string;
   chosenCharacters: string[];
   characters: string[];
@@ -68,7 +68,7 @@ const Spelling: React.FC<SpellingProps> = ({ data }) => {
   const router = useRouter();
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const keywords = data.keywords as Record<string, string>;
+  const keywords = data.keywords as Record<string, any>;
 
   useEffect(() => {
     let notificationTimer: ReturnType<typeof setTimeout> | undefined;
@@ -83,7 +83,6 @@ const Spelling: React.FC<SpellingProps> = ({ data }) => {
     };
   }, [showNotification]);
 
-  
   useEffect(() => {
     if (timer <= 0) {
       saveResults(
@@ -120,7 +119,6 @@ const Spelling: React.FC<SpellingProps> = ({ data }) => {
   const handleWriteChar = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.toLocaleLowerCase();
 
-   
     if (!data.characters.includes(value.charAt(value.length - 1))) {
       return;
     }
@@ -139,18 +137,15 @@ const Spelling: React.FC<SpellingProps> = ({ data }) => {
 
   const handleEnter = () => {
     const input = word.toLocaleLowerCase();
-    console.log(`Hint: ${words}`);
 
     if (input.length < 3) {
-      setNotificationText("Too short");
+      setNotificationText(keywords.notifications.short);
       setShowNotification(true);
-      return;
     } else if (!isWordInList(input, words)) {
-      setNotificationText("Not a valid word");
+      setNotificationText(keywords.notifications.wrong);
       setShowNotification(true);
-      return;
     } else {
-      setNotificationText("Correct! +15 seconds");
+      setNotificationText(keywords.notifications.correct);
       setShowNotification(true);
 
       const newScore = score + calculateScore(input);
@@ -163,6 +158,8 @@ const Spelling: React.FC<SpellingProps> = ({ data }) => {
       setWords((prevWords) => prevWords.filter((w) => w !== input));
       setWord("");
     }
+
+    console.log(`Hint: ${words}`);
   };
 
   useEffect(() => {

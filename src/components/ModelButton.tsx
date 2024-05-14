@@ -3,16 +3,21 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const ConfirmationModal = ({ show, handleClose, handleConfirm }: any) => {
+const ConfirmationModal = ({
+  show,
+  handleClose,
+  handleConfirm,
+  content,
+}: any) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Start Game Confirmation</Modal.Title>
+        <Modal.Title>{content.title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Are you sure you want to start the game?</Modal.Body>
+      <Modal.Body>{content.body}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Cancel
+          {content.cancelButton}
         </Button>
         <Button
           variant="warning"
@@ -22,14 +27,18 @@ const ConfirmationModal = ({ show, handleClose, handleConfirm }: any) => {
             handleClose();
           }}
         >
-          Start
+          {content.startButton}
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
 
-export default function ModelButton() {
+export default function ModelButton({
+  content,
+}: {
+  content: Record<string, string>;
+}) {
   const [modalShow, setModalShow] = useState(false);
   const router = useRouter();
   const startGame = () => {
@@ -44,7 +53,7 @@ export default function ModelButton() {
           variant="warning"
           onClick={() => setModalShow(true)}
         >
-          Start Game
+          {content.startGameButton}
         </Button>
       </div>
 
@@ -52,6 +61,7 @@ export default function ModelButton() {
         show={modalShow}
         handleClose={() => setModalShow(false)}
         handleConfirm={startGame}
+        content={content}
       />
     </>
   );

@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import {getTranslations} from 'next-intl/server';
 import Link from "next/link";
 import LocalSwitcher from "./local-switcher";
 import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 export default async function Header() {
-//   const t = useTranslations("Header");
+  const t = await getTranslations('Header');
   const lang = await getLocale();
 
   return (
@@ -14,9 +14,9 @@ export default async function Header() {
         <div className="container d-flex justify-content-between align-items-center">
           <Link href={`/${lang}`} passHref className="navbar-brand">
             <div className="d-flex align-items-center">
-              <Image src="/Logo.png" alt="" width={100} height={100} />
+              <Image src="/Logo.png" alt="" width={100} height={100} priority={true}  />
               <h4 className="text-warning m-0 ms-2  d-none d-md-block">
-                {/* {t("title")} */}
+                {t("title")}
               </h4>
             </div>
           </Link>

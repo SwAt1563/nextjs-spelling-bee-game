@@ -1,0 +1,25 @@
+progress[value] {
+  --progress-color: var(--bs-warning); /* the color of the progress bar (fill) */
+  --progress-background: lightgrey; /* the background color */
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+
+  border-radius: 8px;
+  background: var(--progress-background);
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 8px;
+  background: var(--progress-background);
+}
+progress[value]::-webkit-progress-value {
+  border-radius: 8px;
+  background: var(--progress-color);
+}
+progress[value]::-moz-progress-bar {
+  border-radius: 8px;
+  background: var(--progress-color);
+}

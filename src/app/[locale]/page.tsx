@@ -1,37 +1,29 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { getLocale } from "next-intl/server";
 
 export default async function Home() {
   const locale = await getLocale();
 
-  // const t = useTranslations("Language");
+  const t = await getTranslations("Home");
 
   return (
     <>
-      {/* <h1 className="container">
-        <p>{t("title")}</p>
-      </h1> */}
-
       <div className="containe text-center">
         <div className="container-fluid px-4 py-5 my-5 text-center">
           <div className="lc-block col-lg-6 mx-auto">
             <div>
-              <p className="lead ">Spell, Score, Shine</p>
+              <p className="lead ">{t("keywords")}</p>
             </div>
           </div>
           <div className="lc-block">
             <div>
-              <h2 className="fw-bold display-2">Master Your Spelling Skills</h2>
+              <h2 className="fw-bold display-2">{t("title")}</h2>
             </div>
           </div>
           <div className="lc-block col-lg-6 mx-auto mb-4">
             <div>
-              <p className="lead ">
-                Dive into the world of words with our interactive spelling
-                challenges. Start your journey to becoming a spelling champion
-                today!
-              </p>
+              <p className="lead ">{t("body")}</p>
             </div>
           </div>
           <div className="lc-block d-block mx-auto mb-4">

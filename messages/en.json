@@ -15,12 +15,12 @@
   },
   "Instructions": {
     "title": "Game Instructions",
-    "startGameButton": "Start Game",
     "model": {
       "title": "Start Game Confirmation",
       "body": "Are you sure you want to start the game?",
       "cancelButton": "Cancel",
-      "startButton": "Start"
+      "startButton": "Start",
+      "startGameButton": "Start Game"
     },
     "list": [
       {
@@ -78,6 +78,6 @@
     "success": "Success",
     "true": "Yes",
     "false": "No",
-    "time": "Time Taken: {{minutes}} minute{{minutesS}} and {{seconds}} second{{secondsS}}"
+    "time": "Time Taken"
   }
 }

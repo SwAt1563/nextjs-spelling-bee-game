@@ -1,13 +1,13 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-export default function Footer() {
-  //   const t = useTranslations('Footer');
+export default async function Footer() {
+  const t = await getTranslations("Footer");
 
   return (
     <footer className="footer w-100 text-center bg-dark text-white p-3 mt-auto">
       <div className="text-center p-3">
-        © 2024 Copyright:
+        {t("title")}:
         <Link
           href="https://swat1563.github.io/my-cv/"
           target="_blank"

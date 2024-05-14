@@ -15,12 +15,12 @@
   },
   "Instructions": {
     "title": "Oyun Talimatları",
-    "startGameButton": "Oyunu Başlat",
     "model": {
       "title": "Oyunu Başlatma Onayı",
       "body": "Oyunu başlatmak istediğinizden emin misiniz?",
       "cancelButton": "İptal",
-      "startButton": "Başlat"
+      "startButton": "Başlat",
+      "startGameButton": "Oyunu Başlat"
     },
     "list": [
       {
@@ -76,6 +76,6 @@
     "success": "Başarı",
     "true": "Evet",
     "false": "Hayır",
-    "time": "Harcanan Zaman: {{minutes}} dakika{{minutesS}} ve {{seconds}} saniye{{secondsS}}"
+    "time": "Harcanan Zaman"
   }
 }
